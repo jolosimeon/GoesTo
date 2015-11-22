@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a Farmer - Admin Side</title>
+	<script src='https://cdn.firebase.com/js/client/2.3.1/firebase.js'></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="//cdn.firebase.com/v0/firebase.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/spin.js/1.2.7/spin.min.js"></script>
+	<script src="imageUpload/sha256.js"></script>
+	<script src="imageUpload/firepano.js"></script>
+	<link rel="stylesheet" type="text/css" href="imageUpload/firepano.css">
+</head>
+<body id = "body">
+	<input id="nick_name" type="text" placeholder="Nick Name"><br />
+    <input id="time_posted" type="text" placeholder="Time Posted"><br />
+	<input id="goal" type="number" placeholder="Goal"><br />
+	<input id="raised" type="number" placeholder="Raised"><br />
+    <textarea id="story" rows="10" cols="60"></textarea><br />
+	<select name="type" id="feedtype">
+	  <option value="recently_added">recently_added</option>
+	  <option value="updates">updates</option>
+	  <option value="completed">completed</option>
+	</select>
+    <button id="post">Post</button><br /><br />
+    <script>
+		var firebaselink = 'https://needforseed.firebaseio.com/' +  document.querySelector('#feedtype').value;
+		var ref = new Firebase(firebaselink);
+		var nicknameInput = document.querySelector('#nick_name');
+		var timepostedInput = document.querySelector('#time_posted');
+		var storyInput = document.querySelector('#story');
+		var goalInput = document.querySelector('#goal');
+		var raisedInput = document.querySelector('#raised');
+
+		var postButton = document.querySelector('#post');
+		
+		
+		var today = new Date();
+		var dd = today.getDate();
+		var mm = today.getMonth()+1; //January is 0!
+		var yyyy = today.getFullYear();
+		
+		
+		if(dd<10) {
+			dd='0'+dd
+		} 
+
+		if(mm<10) {
+			mm='0'+mm
+		} 
+		
+		today = mm+'/'+dd+'/'+yyyy;
+		
+		postButton.addEventListener("click", function() {
+			var nick_name = nicknameInput.value;
+			var time_posted = timepostedInput.value;
+			var story = storyInput.value;
+			var goal = goalInput.value;
+			var raised = raisedInput.value;
+
+			ref.push({nick_name:nick_name, time_posted, story:story, goal:goal, raised:raised});
+			
+			nicknameInput.value = "";
+			timepostedInput.value = "";
+			storyInput.value = "";
+		});
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      C:\Program Files\nodejs\node.exe C:\Users\Jolo Simeon\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] Platform:     win32
+[debug] Node Version: v4.2.2
+[debug] Time:         Sun Nov 22 2015 01:00:01 GMT+0800 (Malay Peninsula Standard Time)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/firebase/NeedforSeed/token?token=XXX 
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/firebase/NeedforSeed/token?token=XXX 
+[debug] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'NeedforSeed'...
+[info] 
+[info] i  deploying hosting
+[info] i  preparing public directory for upload...
+[warn] !  Warning: Public directory does not contain index.html
+[debug] >>> HTTP REQUEST PUT https://deploy.firebase.com/firebase/NeedforSeed/uploads/-K3ezFvOvZB2dwMSRUXZ?token=XXX&fileCount=1&message= 
+[debug] <<< HTTP RESPONSE 200
+[debug] ----------------------------------------------------------------------
+[debug] Command:      C:\Program Files\nodejs\node.exe C:\Users\Jolo Simeon\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] Platform:     win32
+[debug] Node Version: v4.2.2
+[debug] Time:         Sun Nov 22 2015 01:03:37 GMT+0800 (Malay Peninsula Standard Time)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/firebase/NeedforSeed/token?token=XXX 
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/firebase/NeedforSeed/token?token=XXX 
+[debug] ----------------------------------------------------------------------
+[debug] Command:      C:\Program Files\nodejs\node.exe C:\Users\Jolo Simeon\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] Platform:     win32
+[debug] Node Version: v4.2.2
+[debug] Time:         Sun Nov 22 2015 01:04:56 GMT+0800 (Malay Peninsula Standard Time)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/firebase/NeedforSeed/token?token=XXX 
+[debug] ----------------------------------------------------------------------
+[debug] Command:      C:\Program Files\nodejs\node.exe C:\Users\Jolo Simeon\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] Platform:     win32
+[debug] Node Version: v4.2.2
+[debug] Time:         Sun Nov 22 2015 01:09:31 GMT+0800 (Malay Peninsula Standard Time)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/firebase/NeedforSeed/token?token=XXX 
+[debug] Error: getaddrinfo ENOTFOUND admin.firebase.com admin.firebase.com:443
+    at errnoException (dns.js:26:10)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:77:26)
+[error] 
+[error] Error: Server Error. Please try again in a few minutes.
+[debug] Error Context: {
+  "requestOptions": {
+    "method": "GET",
+    "json": true,
+    "url": "https://admin.firebase.com/firebase/NeedforSeed/token?token=-K33mSIXW_1yvWET89b2%7Cb4a27e0f75472f50e049a979036f820e"
+  }
+}
+[debug] ----------------------------------------------------------------------
+[debug] Command:      C:\Program Files\nodejs\node.exe C:\Users\Jolo Simeon\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] Platform:     win32
+[debug] Node Version: v4.2.2
+[debug] Time:         Sun Nov 22 2015 01:16:18 GMT+0800 (Malay Peninsula Standard Time)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/firebase/NeedforSeed/token?token=XXX 
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/firebase/NeedforSeed/token?token=XXX 
+[debug] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'NeedforSeed'...
+[info] 
+[info] i  deploying hosting
+[info] i  preparing public directory for upload...
+[warn] !  Warning: Public directory does not contain index.html
+[debug] >>> HTTP REQUEST PUT https://deploy.firebase.com/firebase/NeedforSeed/uploads/-K3f2-cC6voHUKGMmVcm?token=XXX&fileCount=8&message= 
+[debug] <<< HTTP RESPONSE 200

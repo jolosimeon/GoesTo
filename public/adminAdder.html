@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a Farmer - Admin Side</title>
+	<script src='https://cdn.firebase.com/js/client/2.3.1/firebase.js'></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="//cdn.firebase.com/v0/firebase.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/spin.js/1.2.7/spin.min.js"></script>
+	<script src="imageUpload/sha256.js"></script>
+	<script src="imageUpload/firepano.js"></script>
+	<link rel="stylesheet" type="text/css" href="imageUpload/firepano.css">
+</head>
+<body id = "body">
+	<input id="nick_name" type="text" placeholder="Nick Name"><br />
+    <input id="full_name" type="text" placeholder="Full Name"><br />
+	<input id="location" type="text" placeholder="Location"><br />
+	<input id="goal" type="number" placeholder="Goal"><br />
+	<input id="date_posted" type="date" placeholder="Date Posted"><br />
+	<input id="date_target" type="date" placeholder="Target Date"><br />
+    <textarea id="story" rows="15" cols="100" placeholder="Story"></textarea><br />
+	<input id="imgurl" type="text" placeholder="Link to image"><br />
+	<!--<input class="hidden" type="file" accept="image/*" capture="camera" id="file-upload">-->
+    <button id="post">Post</button><br /><br />
+    <div id="results">
+        
+    </div>
+    <script>
+		var ref = new Firebase('https://needforseed.firebaseio.com/farmers');
+		var nicknameInput = document.querySelector('#nick_name');
+		var fullnameInput = document.querySelector('#full_name');
+		var locationInput = document.querySelector('#location');
+		var goalInput = document.querySelector('#goal');
+		var datetargetInput = document.querySelector('#date_target');
+		var storyInput = document.querySelector('#story');
+		var datepostedInput = document.querySelector('#date_posted');
+		var imgurlInput = document.querySelector('#imgurl');
+		var postButton = document.querySelector('#post');
+		
+		
+		var today = new Date();
+		var dd = today.getDate();
+		var mm = today.getMonth()+1; //January is 0!
+		var yyyy = today.getFullYear();
+		
+		
+		if(dd<10) {
+			dd='0'+dd
+		} 
+
+		if(mm<10) {
+			mm='0'+mm
+		} 
+		
+		today = mm+'/'+dd+'/'+yyyy;
+		
+		postButton.addEventListener("click", function() {
+			var nick_name = nicknameInput.value;
+			var full_name = fullnameInput.value;
+			var location = locationInput.value;
+			var goal = goalInput.value;
+			var date_target = datetargetInput.value;
+			var story = storyInput.value;
+			var date_posted = datepostedInput.value;
+			var status = "0";
+			var raised = "0";
+			var img_url = imgurlInput.value;
+
+			ref.push({nick_name: nick_name, full_name:full_name, location:location, story: story, goal:goal, raised: raised, date_posted:date_posted, status:status, date_target:date_target, img_url:img_url});
+			
+			fullnameInput.value = "";
+			locationInput.value = "";
+			goalInput.value = "";
+			datetargetInput.value = "";
+			storyInput.value = "";
+			datepostedInput.value = "";
+		});
+		
+		ref.on('child_added', function(snapshot) {
+			var msg = snapshot.val();
+			var html = '<div class="msg"><div class="name">' +
+					   '<b>' + msg.full_name + '</b>' +
+					   '<p>' + msg.story + '</p>' +
+					   '<p>' + msg.img_url + '</p>' +
+					   '</div>';
+			document.querySelector("#results").innerHTML += html;
+		});
+
+
+    </script>
+</body>
+</html>
