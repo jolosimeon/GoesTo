@@ -2,10 +2,10 @@
 Need for Seed is a web application that enables Filipinos to hear the stories of struggling farmers. It then encourages users to help them by donating money that these farmers will need to buy supplies and help them get back on their feet. Through this application solution, we hope to be able to spread awareness regarding our country's agricultural situation, as well as the welfare of our fellow countrymen.
 
 #‪#‎ Screenshots‬
-![Feed](Screenshot1.png)
-![List](Screenshot2.png)
-![Profile part 1](Screenshot3.png)
-![Profile part 2](Screenshot4.png)
+![Feed](https://raw.githubusercontent.com/jolosimeon/GoesTo/master/Screenshot1.PNG)
+![List](https://raw.githubusercontent.com/jolosimeon/GoesTo/master/Screenshot2.PNG)
+![Profile part 1](https://raw.githubusercontent.com/jolosimeon/GoesTo/master/Screenshot3.PNG)
+![Profile part 2](https://raw.githubusercontent.com/jolosimeon/GoesTo/master/Screenshot4.PNG)
 
 ## Tech and Data Used
 - Materialize, Bootstrap, JQuery
